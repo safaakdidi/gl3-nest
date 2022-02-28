@@ -2,7 +2,7 @@ import { TodoStatusEnum } from '../enums/todo-status.enum';
 
 export class Todo {
   constructor(
-    public id :number,
+    public id: number,
     public name: string = '',
     public description: string = '',
     public createdAt = new Date(),

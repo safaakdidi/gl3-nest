@@ -7,12 +7,15 @@ import {
   Param,
   Put,
   ParseIntPipe,
+  UseInterceptors,
 } from '@nestjs/common';
 import { Todo } from './Model/todo.model';
 import { TodoService } from './todo.service';
 import { AddTodoDto } from './TodoDto/AddTodoDto';
 import { UpdateTodoDto } from './TodoDto/UpdateTodoDto';
+import { RequestDurationInterceptor } from '../interceptors/RequestDurationInterceptor';
 
+@UseInterceptors(RequestDurationInterceptor)
 @Controller('todo')
 export class TodoController {
   constructor(private todoService: TodoService) {}
