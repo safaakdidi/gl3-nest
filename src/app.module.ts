@@ -17,19 +17,18 @@ import { TimeEntity } from './entities/TimeEntity';
 @Module({
   imports: [
     TodoModule,
-    ConfigModule.forRoot({
-      isGlobal: true,
-    }),
+     CvModule,
+    SkillModule,
+    UserModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: process.env.DB_HOST,
-      port: 3307,
-      username: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
-      autoLoadEntities: true,
-      //entities: [TodoEntity, TimeEntity],
+      host: 'localhost',
+      port: 3360,
+      username: 'root',
+      password: '',
+      database: 'cvs_nest',
       synchronize: true,
+      autoLoadEntities: true,
     }),
   ],
   controllers: [AppController],
